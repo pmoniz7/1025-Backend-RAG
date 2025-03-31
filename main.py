@@ -1,3 +1,4 @@
+
 from functools import lru_cache
 from typing import Union
 
@@ -59,4 +60,5 @@ def read_root(settings: config.Settings = Depends(get_settings)):
 print ("%%%%%% Main.py - vou entrar def read_item %%%%%%%")
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
+    print ("%%%%%% Main.py - em def read_item %%%%%%% = ", item_id)
     return {"item_id": item_id, "q": q}
