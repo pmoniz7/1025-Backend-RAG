@@ -50,7 +50,7 @@ def upload_pdf(db: Session, file: UploadFile, file_name: str):
             file_name
         )
         file_url = f'https://{BUCKET_NAME}.s3.amazonaws.com/{file_name}'
-                        
+        print("%%%%%%%%%% file_url %%%%%%%% = ", file_url)                
         db_pdf = models.PDF(name=file.filename, selected=False, file=file_url)
         db.add(db_pdf)
         db.commit()
