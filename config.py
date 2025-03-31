@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     DATABASE_USER: str
     DATABASE_PASSWORD: str
     DATABASE_PORT: int
-    app_name: str = "Full Stack PDF-RAG CRUD App"
+    app_name: str = "Full Stack PDFRAG CRUD App"
     AWS_KEY: str
     AWS_SECRET: str
     #AWS_S3_BUCKET: str = "pdf-basic-app"  #Paulo Roberto Moniz - comentou essa linha #
