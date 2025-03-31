@@ -142,4 +142,5 @@ async def write_sumar_by_id(id: int, db: Session = Depends(get_db)):
     if pdf  is None:
         raise HTTPException(status_code=404, detail="pdf do not found")
     sumar = write_sumar_chain.run(text=pdf.name)
+    print ("%%%%%%%%%% sumar em write_sumar_by_id %%%%%%%%% = ", sumar)
     return {'sumar': sumar}
