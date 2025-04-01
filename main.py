@@ -21,8 +21,9 @@ print ("%%%%%% Main.py - vou entrar em Origins %%%%%%%")
 
 origins = [
     "http://localhost:3000",
-    "https://1025-frontend-rag.vercel.app/",
+    "https://1025-frontend-rag.vercel.app/",  
 ]
+
 print ("%%%%%% Main.py - vou entrar em CORS configuration %%%%%%%")
 
 # CORS configuration, needed for frontend development
@@ -62,3 +63,5 @@ print ("%%%%%% Main.py - vou entrar def read_item %%%%%%%")
 def read_item(item_id: int, q: Union[str, None] = None):
     print ("%%%%%% Main.py - em def read_item %%%%%%% = ", item_id)
     return {"item_id": item_id, "q": q}
+
+print ("%%%%%% Main.py - PASSEI POR TODAS AS FUNÇÕES %%%%%%%")
