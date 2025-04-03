@@ -18,10 +18,10 @@ app = FastAPI()
 app.include_router(pdfs.router)
 
 
-#origins = [
-#    "http://localhost:3000",
-#    "https://1025-frontend-rag.vercel.app/",  
-#]
+origins = [
+    "http://localhost:3000",
+    "https://1025-frontend-rag.vercel.app/",  
+]
 
 # CORS configuration, needed for frontend development
 app.add_middleware(
