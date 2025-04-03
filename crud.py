@@ -10,7 +10,7 @@ def create_pdf(db: Session, pdf: schemas.PDFRequest):
     db.commit()
     db.refresh(db_pdf)
     return db_pdf
-
+ 
 def read_pdfs(db: Session, selected: bool = None):
     if selected is None:
         return db.query(models.PDF).all()
@@ -42,7 +42,7 @@ def delete_pdf(db: Session, id: int):
 def upload_pdf(db: Session, file: UploadFile, file_name: str):
     s3_client = Settings.get_s3_client()
     BUCKET_NAME = Settings().AWS_S3_BUCKET
-    
+ 
     try:
         s3_client.upload_fileobj(
             file.file,
@@ -50,7 +50,7 @@ def upload_pdf(db: Session, file: UploadFile, file_name: str):
             file_name
         )
         file_url = f'https://{BUCKET_NAME}.s3.amazonaws.com/{file_name}'
-        print("%%%%%%%%%% file_url %%%%%%%% = ", file_url)                
+                       
         db_pdf = models.PDF(name=file.filename, selected=False, file=file_url)
         db.add(db_pdf)
         db.commit()
